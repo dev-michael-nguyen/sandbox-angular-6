@@ -5,7 +5,7 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  hasLeftNav() {
+    return element(by.id("app-left-nav")) ? true : false;
   }
 }
