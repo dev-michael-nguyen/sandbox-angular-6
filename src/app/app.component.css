@@ -7,17 +7,9 @@
   width: 0;
   overflow-x: hidden;
   background-color: black;
-  transition: .4s;
-}
-
-.left-nav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: white;
-  display: block;
+  transition: .2s;
 }
 
 #app-main {
-  transition: margin-left .5s;
+  transition: margin-left .2s;
 }

@@ -1,0 +1,31 @@
+.left-nav-link {
+  display: block;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 24px;
+  color: gray;
+}
+.left-nav-link:hover {
+  color: white;
+}
+.left-nav-link.active {
+  color: green;
+}
+
+.left-nav-group-title {
+  pointer-events: none;
+}
+
+.left-nav-group-icon {
+  float: right;
+  padding-right: 8px;
+  pointer-events: none;
+}
+
+.left-nav-group-links {
+  height: 0;
+  overflow: hidden;
+  padding-left: 16px;
+  background-color: #262626;
+  transition: height .2s;
+}

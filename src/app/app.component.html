@@ -1,9 +1,8 @@
 <div class="left-nav" id="app-left-nav">
   <input type="hidden" [value]="leftNavState"/>
-  <a href="#">Home</a>
-  <a href="#">Group A</a>
-  <a href="#">Group B</a>
-  <a href="#">Group C</a>
+  <ng-template ngFor let-node [ngForOf]="leftNavTree">
+    <app-left-nav-node [node]="node"></app-left-nav-node>
+  </ng-template>
 </div>
 
 <div id="app-main">
