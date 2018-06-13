@@ -10,30 +10,49 @@ export class LeftNavNodeComponent {
   @Input()
   node : object = {};
 
-  toggleNode(element) {
-    var isActiveGroup = element.querySelector("a").classList.toggle("active");
-    var groupIcon = element.querySelector(".left-nav-link-icon");
-    isActiveGroup
-      ? groupIcon.innerHTML = "&#9660;"
-      : groupIcon.innerHTML = "&#9658;";
+  toggleLink(element, node){
+    Array.from(document.querySelectorAll('.left-nav-link.active'))
+      .forEach(activeLink => activeLink.classList.toggle("active"));
+    element.classList.toggle("active");
 
+    Array.from(document.querySelectorAll('.left-nav-group-link.active'))
+      .forEach(activeLink => activeLink.classList.toggle("active"));
+    _toggleActiveForAncestorGroupLinks(element);
+  }
+
+  toggleGroupLink(element) {
+    element.querySelector(".left-nav-group-link").classList.toggle("opened");
+    element.querySelector(".left-nav-link-icon").classList.toggle("opened");
     var groupLinks = element.querySelector(".left-nav-group-links");
-    var isActiveGroupLinks = groupLinks.classList.toggle("active");;
-    _adjustAncestorGroupLinksHeight(element, isActiveGroupLinks ? groupLinks.scrollHeight : groupLinks.scrollHeight*-1);
-    _adjustGroupLinksHeight(element, isActiveGroupLinks ? 0 : groupLinks.scrollHeight*-1);
+    var isOpenedGroupLinks = groupLinks.classList.toggle("opened");;
+    _adjustHeightForAncestorGroupLinks(element, isOpenedGroupLinks ? groupLinks.scrollHeight : groupLinks.scrollHeight*-1);
+    _adjustHeightForGroupLinks(element, isOpenedGroupLinks ? 0 : groupLinks.scrollHeight*-1);
   }
 }
 
-function _adjustAncestorGroupLinksHeight(el, height) {
+function _toggleActiveForAncestorGroupLinks(el) {
   el = el.parentElement;
   if (!el) { return; }
-  el.classList.contains("left-nav-group") ? _adjustGroupLinksHeight(el, height) : null;
-  _adjustAncestorGroupLinksHeight(el, height);
+  el.classList.contains("left-nav-group") ? _toggleActiveGroupLink(el) : null;
+  _toggleActiveForAncestorGroupLinks(el);
 }
 
-function _adjustGroupLinksHeight(el, height?){
+function _toggleActiveGroupLink(leftNavGroupElement) {
+  const groupLink = leftNavGroupElement.querySelector(".left-nav-group-link");
+  if (!groupLink) { return; }
+  groupLink.classList.toggle("active");
+}
+
+function _adjustHeightForAncestorGroupLinks(el, height) {
+  el = el.parentElement;
+  if (!el) { return; }
+  el.classList.contains("left-nav-group") ? _adjustHeightForGroupLinks(el, height) : null;
+  _adjustHeightForAncestorGroupLinks(el, height);
+}
+
+function _adjustHeightForGroupLinks(leftNavGroupElement, height?){
   const _height = height || 0;
-  const groupLinks = el.querySelector(".left-nav-group-links");
+  const groupLinks = leftNavGroupElement.querySelector(".left-nav-group-links");
   if (!groupLinks) { return; }
   groupLinks.style.height = (groupLinks.scrollHeight + _height) + "px";
 }

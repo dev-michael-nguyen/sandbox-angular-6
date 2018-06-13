@@ -1,4 +1,5 @@
-.left-nav-link {
+.left-nav-link,
+.left-nav-group-link {
   display: block;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -7,12 +8,15 @@
   color: gray;
 }
 
-.left-nav-link:hover {
+.left-nav-link:hover,
+.left-nav-group-link:hover {
+  background-color: #161616;
   color: white;
 }
 
-.left-nav-link.active {
-  color: green;
+.left-nav-link.active,
+.left-nav-group-link.active {
+  color: yellowgreen;
 }
 
 .left-nav-link-title {
@@ -21,15 +25,21 @@
 }
 
 .left-nav-link-icon {
-  float: right;
-  padding-right: 16px;
   pointer-events: none;
+}
+
+.left-nav-link-icon::before {
+  content: " \25BA";
+}
+
+.left-nav-link-icon.opened::before {
+  content: " \25BC";
 }
 
 .left-nav-group-links {
   height: 0;
   overflow: hidden;
   padding-left: 32px;
-  background-color: #262626;
+  background-color: #242424;
   transition: height .2s;
 }
