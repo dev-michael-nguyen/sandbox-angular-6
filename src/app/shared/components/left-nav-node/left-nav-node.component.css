@@ -1,31 +1,35 @@
 .left-nav-link {
   display: block;
-  padding: 8px 8px 8px 32px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   text-decoration: none;
   font-size: 24px;
   color: gray;
 }
+
 .left-nav-link:hover {
   color: white;
 }
+
 .left-nav-link.active {
   color: green;
 }
 
-.left-nav-group-title {
+.left-nav-link-title {
+  padding-left: 16px;
   pointer-events: none;
 }
 
-.left-nav-group-icon {
+.left-nav-link-icon {
   float: right;
-  padding-right: 8px;
+  padding-right: 16px;
   pointer-events: none;
 }
 
 .left-nav-group-links {
   height: 0;
   overflow: hidden;
-  padding-left: 16px;
+  padding-left: 32px;
   background-color: #262626;
   transition: height .2s;
 }

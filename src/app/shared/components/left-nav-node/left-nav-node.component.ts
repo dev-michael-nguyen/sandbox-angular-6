@@ -12,7 +12,7 @@ export class LeftNavNodeComponent {
 
   toggleNode(element) {
     var isActiveGroup = element.querySelector("a").classList.toggle("active");
-    var groupIcon = element.querySelector(".left-nav-group-icon");
+    var groupIcon = element.querySelector(".left-nav-link-icon");
     isActiveGroup
       ? groupIcon.innerHTML = "&#9660;"
       : groupIcon.innerHTML = "&#9658;";

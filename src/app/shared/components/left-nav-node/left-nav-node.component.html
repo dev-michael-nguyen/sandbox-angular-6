@@ -1,11 +1,16 @@
 <a class="left-nav-link" href="#"
-  *ngIf="!node.children">{{ node.displayName }}
+  *ngIf="!node.children">
+  <span class="left-nav-link-title">
+    {{ node.displayName }}
+  </span>
 </a>
 <div class="left-nav-group"
   *ngIf="node.children">
   <a class="left-nav-link" href="javascript:void(0)" (click)="toggleNode($event.target.parentElement)">
-    <span class="left-nav-group-title">{{ node.displayName }}</span>
-    <span class="left-nav-group-icon">&#9658;</span>
+    <span class="left-nav-link-title">
+      {{ node.displayName }}
+      <span class="left-nav-link-icon">&#9658;</span>
+    </span>
   </a>
   <div class="left-nav-group-links">
     <ng-template ngFor let-childNode [ngForOf]="node.children">
