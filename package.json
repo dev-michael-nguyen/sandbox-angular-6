@@ -1,5 +1,5 @@
 {
-  "name": "demo-angular-cli",
+  "name": "sandbox-angular-6",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,8 @@
     "app:lint": "ng lint",
     "app:build": "ng build",
     "app:test": "ng test",
-    "app:test:e2e": "ng e2e"
+    "app:test:e2e": "ng e2e",
+    "app:deploy": "firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {

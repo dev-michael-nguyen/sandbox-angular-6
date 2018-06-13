@@ -1,0 +1,8 @@
+{
+  "hosting": {
+    "predeploy": [
+      "npm run app:build"
+    ],
+    "public": "dist"
+  }
+}
