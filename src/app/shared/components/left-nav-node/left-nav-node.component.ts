@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 
 export class LeftNavNodeComponent {
   @Input()
-  node : object = {};
+  node : { children: Array<object> };
 
   toggleLink(element, node){
     Array.from(document.querySelectorAll('.left-nav-link.active'))
