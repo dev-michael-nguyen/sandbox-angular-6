@@ -23,8 +23,8 @@ export class LeftNavNodeComponent {
   toggleGroupLink(element) {
     element.querySelector(".left-nav-group-link").classList.toggle("opened");
     element.querySelector(".left-nav-link-icon").classList.toggle("opened");
-    var groupLinks = element.querySelector(".left-nav-group-links");
-    var isOpenedGroupLinks = groupLinks.classList.toggle("opened");;
+    const groupLinks = element.querySelector(".left-nav-group-links");
+    const isOpenedGroupLinks = groupLinks.classList.toggle("opened");;
     _adjustHeightForAncestorGroupLinks(element, isOpenedGroupLinks ? groupLinks.scrollHeight : groupLinks.scrollHeight*-1);
     _adjustHeightForGroupLinks(element, isOpenedGroupLinks ? 0 : groupLinks.scrollHeight*-1);
   }
