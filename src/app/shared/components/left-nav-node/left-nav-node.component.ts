@@ -18,21 +18,24 @@ export class LeftNavNodeComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         Array.from(document.querySelectorAll('.left-nav-link-path'))
-          .filter(elem => (elem as HTMLInputElement).value === event.url)
-          .forEach(elem => this.toggleLink(elem.parentElement, { path: event.url }));
+          .filter(elem => !elem.parentElement.classList.contains('active') && (elem as HTMLInputElement).value === event.urlAfterRedirects)
+          .forEach(elem => this.toggleLink(elem.parentElement, { path: event.urlAfterRedirects }));
       }
     });
   }
 
   toggleLink(element, node) {
+    // deactivate all other active links
     Array.from(document.querySelectorAll('.left-nav-link.active'))
       .forEach(activeLink => activeLink.classList.toggle('active'));
-    element.classList.toggle('active');
-
     Array.from(document.querySelectorAll('.left-nav-group-link.active'))
       .forEach(activeLink => activeLink.classList.toggle('active'));
+
+    // activate this link
+    element.classList.toggle('active');
     _toggleActiveForAncestorGroupLinks(element);
 
+    // navigate route for this link
     node.path ? this.router.navigate([node.path]) : this.router.navigate(['/error']);
   }
 
@@ -50,12 +53,12 @@ function _toggleActiveForAncestorGroupLinks(el) {
   el = el.parentElement;
   if (!el) { return; }
   if (el.classList.contains('left-nav-group')) {
-    _toggleActiveGroupLink(el);
+    _toggleActiveForGroupLink(el);
   }
   _toggleActiveForAncestorGroupLinks(el);
 }
 
-function _toggleActiveGroupLink(leftNavGroupElement) {
+function _toggleActiveForGroupLink(leftNavGroupElement) {
   const groupLink = leftNavGroupElement.querySelector('.left-nav-group-link');
   if (!groupLink) { return; }
   groupLink.classList.toggle('active');
