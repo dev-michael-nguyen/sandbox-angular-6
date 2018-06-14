@@ -26,6 +26,7 @@ export class AppComponent {
   leftNavTree = [
     {
       displayName: "Home",
+      path: '/home'
     },
     {
       displayName: "Group A",

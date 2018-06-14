@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-left-nav-node',
@@ -7,8 +8,21 @@ import { Component, Input } from '@angular/core';
 })
 
 export class LeftNavNodeComponent {
-  @Input()
-  node : { children: Array<object> };
+  @Input() node : { children: Array<object> };
+
+  constructor(
+    private router: Router,
+  ) {}
+
+  ngOnInit(){
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        Array.from(document.querySelectorAll('.left-nav-link-path'))
+          .filter(elem => (elem as HTMLInputElement).value == event.url)
+          .forEach(elem => this.toggleLink(elem.parentElement, { path: event.url }));
+      };
+    });
+  }
 
   toggleLink(element, node){
     Array.from(document.querySelectorAll('.left-nav-link.active'))
@@ -18,6 +32,8 @@ export class LeftNavNodeComponent {
     Array.from(document.querySelectorAll('.left-nav-group-link.active'))
       .forEach(activeLink => activeLink.classList.toggle("active"));
     _toggleActiveForAncestorGroupLinks(element);
+
+    node.path ? this.router.navigate([node.path]) : this.router.navigate(['/error']);
   }
 
   toggleGroupLink(element) {
