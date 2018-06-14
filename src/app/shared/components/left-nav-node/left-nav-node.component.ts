@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -7,68 +7,72 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./left-nav-node.component.css']
 })
 
-export class LeftNavNodeComponent {
-  @Input() node : { children: Array<object> };
+export class LeftNavNodeComponent implements OnInit {
+  @Input() node: { children: Array<object> };
 
   constructor(
     private router: Router,
   ) {}
 
-  ngOnInit(){
+  ngOnInit () {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         Array.from(document.querySelectorAll('.left-nav-link-path'))
-          .filter(elem => (elem as HTMLInputElement).value == event.url)
+          .filter(elem => (elem as HTMLInputElement).value === event.url)
           .forEach(elem => this.toggleLink(elem.parentElement, { path: event.url }));
-      };
+      }
     });
   }
 
-  toggleLink(element, node){
+  toggleLink(element, node) {
     Array.from(document.querySelectorAll('.left-nav-link.active'))
-      .forEach(activeLink => activeLink.classList.toggle("active"));
-    element.classList.toggle("active");
+      .forEach(activeLink => activeLink.classList.toggle('active'));
+    element.classList.toggle('active');
 
     Array.from(document.querySelectorAll('.left-nav-group-link.active'))
-      .forEach(activeLink => activeLink.classList.toggle("active"));
+      .forEach(activeLink => activeLink.classList.toggle('active'));
     _toggleActiveForAncestorGroupLinks(element);
 
     node.path ? this.router.navigate([node.path]) : this.router.navigate(['/error']);
   }
 
   toggleGroupLink(element) {
-    element.querySelector(".left-nav-group-link").classList.toggle("opened");
-    element.querySelector(".left-nav-link-icon").classList.toggle("opened");
-    const groupLinks = element.querySelector(".left-nav-group-links");
-    const isOpenedGroupLinks = groupLinks.classList.toggle("opened");;
-    _adjustHeightForAncestorGroupLinks(element, isOpenedGroupLinks ? groupLinks.scrollHeight : groupLinks.scrollHeight*-1);
-    _adjustHeightForGroupLinks(element, isOpenedGroupLinks ? 0 : groupLinks.scrollHeight*-1);
+    element.querySelector('.left-nav-group-link').classList.toggle('opened');
+    element.querySelector('.left-nav-link-icon').classList.toggle('opened');
+    const groupLinks = element.querySelector('.left-nav-group-links');
+    const isOpenedGroupLinks = groupLinks.classList.toggle('opened');
+    _adjustHeightForAncestorGroupLinks(element, isOpenedGroupLinks ? groupLinks.scrollHeight : groupLinks.scrollHeight * -1);
+    _adjustHeightForGroupLinks(element, isOpenedGroupLinks ? 0 : groupLinks.scrollHeight * -1);
   }
 }
 
 function _toggleActiveForAncestorGroupLinks(el) {
   el = el.parentElement;
   if (!el) { return; }
-  el.classList.contains("left-nav-group") ? _toggleActiveGroupLink(el) : null;
+  if (el.classList.contains('left-nav-group')) {
+    _toggleActiveGroupLink(el);
+  }
   _toggleActiveForAncestorGroupLinks(el);
 }
 
 function _toggleActiveGroupLink(leftNavGroupElement) {
-  const groupLink = leftNavGroupElement.querySelector(".left-nav-group-link");
+  const groupLink = leftNavGroupElement.querySelector('.left-nav-group-link');
   if (!groupLink) { return; }
-  groupLink.classList.toggle("active");
+  groupLink.classList.toggle('active');
 }
 
 function _adjustHeightForAncestorGroupLinks(el, height) {
   el = el.parentElement;
   if (!el) { return; }
-  el.classList.contains("left-nav-group") ? _adjustHeightForGroupLinks(el, height) : null;
+  if (el.classList.contains('left-nav-group')) {
+    _adjustHeightForGroupLinks(el, height);
+  }
   _adjustHeightForAncestorGroupLinks(el, height);
 }
 
-function _adjustHeightForGroupLinks(leftNavGroupElement, height?){
+function _adjustHeightForGroupLinks(leftNavGroupElement, height?) {
   const _height = height || 0;
-  const groupLinks = leftNavGroupElement.querySelector(".left-nav-group-links");
+  const groupLinks = leftNavGroupElement.querySelector('.left-nav-group-links');
   if (!groupLinks) { return; }
-  groupLinks.style.height = (groupLinks.scrollHeight + _height) + "px";
+  groupLinks.style.height = (groupLinks.scrollHeight + _height) + 'px';
 }

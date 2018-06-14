@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   hasLeftNav() {
-    return element(by.id("app-left-nav")) ? true : false;
+    return element(by.id('app-left-nav')) ? true : false;
   }
 }
