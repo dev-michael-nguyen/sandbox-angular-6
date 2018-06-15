@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LeftNavNodeComponent } from './shared/components/left-nav-node/left-nav-node.component';
-import { HomeComponent } from './modules/home/components/home/home.component';
-import { ErrorComponent } from './shared/components/error/error.component';
+import { LibModule } from './lib/lib.module';
+import { HomeModule } from './modules/home/home.module';
+import { SystemModule } from './modules/system/system.module';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LeftNavNodeComponent,
-    HomeComponent,
-    ErrorComponent,
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LibModule,
+    HomeModule,
+    SystemModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+  ],
+  bootstrap: [AppComponent],
+  providers: []
 })
+
 export class AppModule { }

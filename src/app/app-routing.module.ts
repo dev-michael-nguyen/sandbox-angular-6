@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './modules/home/components/home/home.component';
-import { ErrorComponent } from './shared/components/error/error.component';
+import { HomePageComponent } from './modules/home/components/home-page/home-page.component';
+import { ErrorPageComponent } from './modules/system/components/error-page/error-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'error', component: ErrorComponent },
-  { path: '**', component: ErrorComponent }
+  { path: 'home', component: HomePageComponent },
+  { path: 'error', component: ErrorPageComponent },
+  { path: '**', component: ErrorPageComponent }
 ];
 
 @NgModule({

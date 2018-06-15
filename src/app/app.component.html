@@ -1,10 +1,4 @@
-<div class="left-nav" id="app-left-nav">
-  <input type="hidden" [value]="leftNavState"/>
-  <ng-template ngFor let-node [ngForOf]="leftNavTree">
-    <app-left-nav-node [node]="node"></app-left-nav-node>
-  </ng-template>
-</div>
-
+<app-left-nav [showLeftNav]="showLeftNav"></app-left-nav>
 <div id="app-main">
   <span style="font-size:32px; cursor: pointer" (click)="toggleLeftNav()">&#9776;</span>
   <router-outlet></router-outlet>
