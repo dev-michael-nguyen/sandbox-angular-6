@@ -1,0 +1,8 @@
+<div class="icon-bar">
+  <ng-container *ngFor="let button of data">
+    <div class="icon-bar-button">
+      <i class="{{button.icon}}"></i>
+      <div class="icon-bar-button-title" *ngIf="showTitle">{{button.title}}</div>
+    </div>
+  </ng-container>
+</div>
