@@ -11,7 +11,7 @@ export class AppComponent {
   isLeftNavOpened = true;
   leftNavData = [
     {
-      title: 'LTSS',
+      title: 'My Dashboard',
       children: [
         { icon: 'fa fa-home', title: 'Home', path: '/home' },
         { icon: 'fa fa-calendar', title: 'Calendar', path: '/calendar' },
@@ -21,29 +21,19 @@ export class AppComponent {
       ]
     },
     {
-      title: 'Program Management',
+      title: 'Modules',
       children: [
-        { icon: 'fa fa-user', title: 'Persons', path: '/persons' },
+        { icon: 'fa fa-user', title: 'Profiles', path: '/profiles' },
         { icon: 'fa fa-vcard', title: 'Assignments', path: '/assignments' },
-        { icon: 'fa fa-plus-square', title: 'Programs', path: '/programs' },
-        { icon: 'fa fa-credit-card', title: 'Billing', path: '/billing' },
-        { icon: 'fa fa-book', title: 'Progress Notes', path: '/progress-notes' },
-      ]
-    },
-    {
-      title: 'Administrative',
-      children: [
         { icon: 'fa fa-building', title: 'Organizations', path: '/organizations' },
         { icon: 'fa fa-users', title: 'Staffs', path: '/staffs' },
-        { icon: 'fa fa-map-marker', title: 'Location Tracker', path: '/location-tracker' },
-        { icon: 'fa fa-search', title: 'Queries', path: '/queries' },
       ]
     },
     {
       title: 'Tools',
       children: [
+        { icon: 'fa fa-book', title: 'Notes', path: '/notes' },
         { icon: 'fa fa-list-alt', title: 'Reports', path: '/reports' },
-        { icon: 'fa fa-bookmark', title: 'Resource Library', path: '/resource-library' },
         { icon: 'fa fa-shield', title: 'Security', path: '/security' },
         { icon: 'fa fa-question', title: 'Help', path: '/help' },
         { icon: 'fa fa-cogs', title: 'Settings', path: '/settings' },
@@ -57,7 +47,6 @@ export class AppComponent {
     { icon: 'fa fa-comments', title: 'Messages', path: '/messages' },
     { icon: 'fa fa-exclamation-triangle', title: 'Alerts', path: '/alerts' },
     { icon: 'fa fa-search', title: 'Search', path: '/search' },
-    { icon: 'fa fa-user', title: 'Persons', path: '/persons' },
   ];
 
   toggleLeftNav() {
