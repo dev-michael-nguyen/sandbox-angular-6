@@ -5,18 +5,27 @@
   padding-bottom: 8px;
   text-decoration: none;
   font-size: 24px;
-  color: gray;
+  color: black;
+}
+
+.left-nav-group-links {
+  height: 0;
+  overflow: hidden;
+  padding-left: 32px;
+  background-color: #868686;
+  transition: height .2s;
 }
 
 .left-nav-link:hover,
-.left-nav-group-link:hover {
-  background-color: #161616;
+.left-nav-group-link:hover,
+.left-nav-link.active,
+.left-nav-group-link.active {
+  background-color: #484848;
   color: white;
 }
 
-.left-nav-link.active,
-.left-nav-group-link.active {
-  color: yellowgreen;
+.left-nav-group-link.opened {
+  background-color: #484848
 }
 
 .left-nav-link-title {
@@ -34,12 +43,4 @@
 
 .left-nav-link-icon.opened::before {
   content: " \25BC";
-}
-
-.left-nav-group-links {
-  height: 0;
-  overflow: hidden;
-  padding-left: 32px;
-  background-color: #242424;
-  transition: height .2s;
 }
