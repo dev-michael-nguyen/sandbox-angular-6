@@ -1,4 +1,4 @@
-.icon-bar-{
+.icon-bar{
   display: table;
 }
 
@@ -20,4 +20,9 @@
 
 .icon-bar-button i {
   font-size: 32px;
+}
+
+.icon-bar-button i,
+.icon-bar-button-title {
+  pointer-events: none;
 }

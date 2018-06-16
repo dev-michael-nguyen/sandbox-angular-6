@@ -11,17 +11,17 @@ export class LeftNavComponent {
   @Input() data: Array<object> = [];
 
   constructor(
-    private elementRef: ElementRef
+    private _element: ElementRef
   ) {}
 
-  get leftNavElement() {
-    return this.elementRef.nativeElement.firstElementChild;
+  get rootElement() {
+    return this._element.nativeElement.firstElementChild;
   }
 
   get leftNavState() {
     this.isOpened
-    ? this.leftNavElement.style.width = this.width
-    : this.leftNavElement.style.width = '0';
+    ? this.rootElement.style.width = this.width
+    : this.rootElement.style.width = '0';
 
     return this.isOpened;
   }

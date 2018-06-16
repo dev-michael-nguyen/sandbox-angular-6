@@ -17,6 +17,7 @@ export class AppComponent {
         { icon: 'fa fa-calendar', title: 'Calendar', path: '/calendar' },
         { icon: 'fa fa-comments', title: 'Messages', path: '/messages' },
         { icon: 'fa fa-exclamation-triangle', title: 'Alerts', path: '/alerts' },
+        { icon: 'fa fa-search', title: 'Search', path: '/search' },
       ]
     },
     {
@@ -55,8 +56,8 @@ export class AppComponent {
     { icon: 'fa fa-calendar', title: 'Calendar', path: '/calendar' },
     { icon: 'fa fa-comments', title: 'Messages', path: '/messages' },
     { icon: 'fa fa-exclamation-triangle', title: 'Alerts', path: '/alerts' },
-    { icon: 'fa fa-user', title: 'Persons', path: '/persons' },
     { icon: 'fa fa-search', title: 'Search', path: '/search' },
+    { icon: 'fa fa-user', title: 'Persons', path: '/persons' },
   ];
 
   toggleLeftNav() {
