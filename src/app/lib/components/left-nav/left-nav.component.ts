@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-left-nav',
@@ -7,19 +7,22 @@ import { Component, Input } from '@angular/core';
 })
 export class LeftNavComponent {
   @Input() width = '360px';
-  @Input() showLeftNav = true;
+  @Input() isOpened = true;
+  @Input() data: Array<object> = [];
 
-  get leftNavState() {
-    if (this.showLeftNav) {
-      document.getElementById('app-left-nav').style.width = this.width;
-      document.getElementById('app-main').style.marginLeft = this.width;
-    } else {
-      document.getElementById('app-left-nav').style.width = '0';
-      document.getElementById('app-main').style.marginLeft = '0';
-    }
+  constructor(
+    private elementRef: ElementRef
+  ) {}
 
-    return this.showLeftNav;
+  get leftNavElement() {
+    return this.elementRef.nativeElement.firstElementChild;
   }
 
-  @Input() leftNavTree: Array<object> = [];
+  get leftNavState() {
+    this.isOpened
+    ? this.leftNavElement.style.width = this.width
+    : this.leftNavElement.style.width = '0';
+
+    return this.isOpened;
+  }
 }

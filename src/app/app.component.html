@@ -1,5 +1,8 @@
-<app-left-nav [showLeftNav]="showLeftNav" [leftNavTree]="leftNavTree"></app-left-nav>
-<div id="app-main">
-  <span style="font-size:32px; cursor: pointer" (click)="toggleLeftNav()">&#9776;</span>
+<app-left-nav [width]="leftNavWidth" [isOpened]="isLeftNavOpened" [data]="leftNavData"></app-left-nav>
+<div class="app-main" id="app-main">
+  <input type="hidden" [value]="appMainState"/>
+  <div class="app-header">
+    <span style="font-size:32px; cursor: pointer" (click)="toggleLeftNav()">&#9776;</span>
+  </div>
   <router-outlet></router-outlet>
 </div>

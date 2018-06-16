@@ -7,12 +7,9 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  showLeftNav = true;
-  toggleLeftNav() {
-    this.showLeftNav = !this.showLeftNav;
-  }
-
-  leftNavTree = [
+  leftNavWidth = '360px';
+  isLeftNavOpened = true;
+  leftNavData = [
     {
       displayName: 'LTSS',
       children: [
@@ -52,4 +49,16 @@ export class AppComponent {
       ]
     },
   ];
+
+  toggleLeftNav() {
+    this.isLeftNavOpened = !this.isLeftNavOpened;
+  }
+
+  get appMainState() {
+    this.isLeftNavOpened
+      ? document.getElementById('app-main').style.marginLeft = this.leftNavWidth
+      : document.getElementById('app-main').style.marginLeft = '0';
+
+    return this.isLeftNavOpened;
+  }
 }
