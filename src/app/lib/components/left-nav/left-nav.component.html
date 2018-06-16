@@ -1,6 +1,6 @@
-<div class="app-left-nav" id="app-left-nav">
+<div class="left-nav">
   <input type="hidden" [value]="leftNavState"/>
-  <ng-template ngFor let-node [ngForOf]="data">
+  <ng-container *ngFor="let node of data">
     <app-left-nav-node [node]="node"></app-left-nav-node>
-  </ng-template>
+  </ng-container>
 </div>

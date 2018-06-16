@@ -6,7 +6,7 @@ import { Component, Input, ElementRef } from '@angular/core';
   styleUrls: ['./left-nav.component.css']
 })
 export class LeftNavComponent {
-  @Input() width = '360px';
+  @Input() width = '320px';
   @Input() isOpened = true;
   @Input() data: Array<object> = [];
 

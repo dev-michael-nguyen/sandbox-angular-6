@@ -3,20 +3,20 @@
     <input class="left-nav-link-path" type="hidden" [value]="node.path">
     <span class="left-nav-link-title">
       <i class="{{node.icon + ' fa-fw'}}"></i>
-      {{ node.displayName }}
+      {{ node.title }}
     </span>
   </a>
   <div class="left-nav-group" *ngIf="node.children">
     <a class="left-nav-group-link" href="javascript:void(0)" (click)="toggleGroupLink($event.target)">
       <span class="left-nav-link-title">
         <span class="left-nav-link-icon"></span>
-        {{ node.displayName }}
+        {{ node.title }}
       </span>
     </a>
     <div class="left-nav-group-links">
-      <ng-template ngFor let-childNode [ngForOf]="node.children">
+      <ng-container *ngFor="let childNode of node.children">
         <app-left-nav-node [node]="childNode"></app-left-nav-node>
-      </ng-template>
+      </ng-container>
     </div>
   </div>
 </div>

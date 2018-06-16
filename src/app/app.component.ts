@@ -7,47 +7,56 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  leftNavWidth = '360px';
+  leftNavWidth = '320px';
   isLeftNavOpened = true;
   leftNavData = [
     {
-      displayName: 'LTSS',
+      title: 'LTSS',
       children: [
-        { icon: 'fa fa-home', displayName: 'Home', path: '/home' },
-        { icon: 'fa fa-calendar', displayName: 'Calendar', path: '/calendar' },
-        { icon: 'fa fa-comments', displayName: 'Messages', path: '/messages' },
-        { icon: 'fa fa-exclamation-triangle', displayName: 'Alerts', path: '/alerts' },
+        { icon: 'fa fa-home', title: 'Home', path: '/home' },
+        { icon: 'fa fa-calendar', title: 'Calendar', path: '/calendar' },
+        { icon: 'fa fa-comments', title: 'Messages', path: '/messages' },
+        { icon: 'fa fa-exclamation-triangle', title: 'Alerts', path: '/alerts' },
       ]
     },
     {
-      displayName: 'Program Management',
+      title: 'Program Management',
       children: [
-        { icon: 'fa fa-user', displayName: 'Persons', path: '/persons' },
-        { icon: 'fa fa-vcard', displayName: 'Assignments', path: '/assignments' },
-        { icon: 'fa fa-plus-square', displayName: 'Programs', path: '/programs' },
-        { icon: 'fa fa-credit-card', displayName: 'Billing', path: '/billing' },
-        { icon: 'fa fa-book', displayName: 'Progress Notes', path: '/progress-notes' },
+        { icon: 'fa fa-user', title: 'Persons', path: '/persons' },
+        { icon: 'fa fa-vcard', title: 'Assignments', path: '/assignments' },
+        { icon: 'fa fa-plus-square', title: 'Programs', path: '/programs' },
+        { icon: 'fa fa-credit-card', title: 'Billing', path: '/billing' },
+        { icon: 'fa fa-book', title: 'Progress Notes', path: '/progress-notes' },
       ]
     },
     {
-      displayName: 'Administrative',
+      title: 'Administrative',
       children: [
-        { icon: 'fa fa-building', displayName: 'Organizations', path: '/organizations' },
-        { icon: 'fa fa-users', displayName: 'Staffs', path: '/staffs' },
-        { icon: 'fa fa-map-marker', displayName: 'Location Tracker', path: '/location-tracker' },
-        { icon: 'fa fa-search', displayName: 'Queries', path: '/queries' },
+        { icon: 'fa fa-building', title: 'Organizations', path: '/organizations' },
+        { icon: 'fa fa-users', title: 'Staffs', path: '/staffs' },
+        { icon: 'fa fa-map-marker', title: 'Location Tracker', path: '/location-tracker' },
+        { icon: 'fa fa-search', title: 'Queries', path: '/queries' },
       ]
     },
     {
-      displayName: 'Tools',
+      title: 'Tools',
       children: [
-        { icon: 'fa fa-list-alt', displayName: 'Reports', path: '/reports' },
-        { icon: 'fa fa-bookmark', displayName: 'Resource Library', path: '/resource-library' },
-        { icon: 'fa fa-shield', displayName: 'Security', path: '/security' },
-        { icon: 'fa fa-question', displayName: 'Help', path: '/help' },
-        { icon: 'fa fa-cogs', displayName: 'Settings', path: '/settings' },
+        { icon: 'fa fa-list-alt', title: 'Reports', path: '/reports' },
+        { icon: 'fa fa-bookmark', title: 'Resource Library', path: '/resource-library' },
+        { icon: 'fa fa-shield', title: 'Security', path: '/security' },
+        { icon: 'fa fa-question', title: 'Help', path: '/help' },
+        { icon: 'fa fa-cogs', title: 'Settings', path: '/settings' },
       ]
     },
+  ];
+
+  iconBarData = [
+    { icon: 'fa fa-home', title: 'Home', path: '/home' },
+    { icon: 'fa fa-calendar', title: 'Calendar', path: '/calendar' },
+    { icon: 'fa fa-comments', title: 'Messages', path: '/messages' },
+    { icon: 'fa fa-exclamation-triangle', title: 'Alerts', path: '/alerts' },
+    { icon: 'fa fa-user', title: 'Persons', path: '/persons' },
+    { icon: 'fa fa-search', title: 'Search', path: '/search' },
   ];
 
   toggleLeftNav() {
