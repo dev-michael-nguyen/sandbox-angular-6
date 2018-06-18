@@ -9,7 +9,6 @@ import { Router, NavigationEnd } from '@angular/router';
 export class IconBarComponent implements OnInit {
   _ACTIVE = 'active';
 
-  @Input() showTitle = true;
   @Input() data: Array<object> = [];
 
   constructor(

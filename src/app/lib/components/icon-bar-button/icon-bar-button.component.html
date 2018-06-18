@@ -1,0 +1,5 @@
+<div class="icon-bar-button">
+  <input class="icon-bar-button-path" type="hidden" *ngIf="path" [value]="path">
+  <i *ngIf="icon" [class]="icon" [style.fontSize]="title ? '32px' : '50px'"></i>
+  <div class="icon-bar-button-title" *ngIf="title">{{title}}</div>
+</div>

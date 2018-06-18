@@ -1,28 +1,3 @@
 .icon-bar{
   display: table;
 }
-
-.icon-bar-button {
-  /* float: left; */
-  display: table-cell;
-  width: 96px;
-  padding: 12px 0;
-  text-align: center;
-  font-size: 16px;
-  color: black;
-  cursor: pointer;
-}
-
-.icon-bar-button:hover,
-.icon-bar-button.active {
-  background-color: #bbbbbb;
-}
-
-.icon-bar-button i {
-  font-size: 32px;
-}
-
-.icon-bar-button i,
-.icon-bar-button-title {
-  pointer-events: none;
-}

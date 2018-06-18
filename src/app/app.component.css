@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-#app-header-icon-bar{
+.pos-fixed-top-right{
   position: fixed;
   top: 0;
   right: 0;
