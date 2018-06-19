@@ -1,0 +1,10 @@
+.module-page-header {
+  border-width: 1px 0;
+  border-style: solid;
+  background-color: #bbbbbb;
+  text-align: center;
+}
+
+.module-page-header h2 {
+  margin: 8px 0;
+}

@@ -7,25 +7,27 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./left-nav-node.component.css']
 })
 
-export class LeftNavNodeComponent {
+export class LeftNavNodeComponent implements OnInit {
   _ACTIVE = 'active';
   _OPENED = 'opened';
 
   @Input() node: { children: Array<object> };
 
-  get rootElement() {
-    return this._element.nativeElement.firstElementChild as HTMLElement;
+  get rootEl() {
+    return this._el.nativeElement.firstElementChild as HTMLElement;
   }
 
   constructor(
-    private _element: ElementRef,
+    private _el: ElementRef,
     private _router: Router,
-  ) {
+  ) {}
+
+  ngOnInit() {
     this._router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        const leftNavLinkPath = this.rootElement.querySelector('.left-nav-link-path');
+        const leftNavLinkPath = this.rootEl.querySelector('.left-nav-link-path');
         if ((leftNavLinkPath as HTMLInputElement).value === event.urlAfterRedirects) {
-          this.toggleActiveForLink(leftNavLinkPath.parentElement, { path: event.urlAfterRedirects });
+          this.toggleActiveForLink(leftNavLinkPath.parentElement, { routePath: event.urlAfterRedirects });
         }
       }
     });
@@ -43,7 +45,7 @@ export class LeftNavNodeComponent {
     linkEl.classList.toggle(this._ACTIVE);
 
     // navigate route for this link
-    node.path ? this._router.navigate([node.path]) : this._router.navigate(['/error']);
+    node.routePath ? this._router.navigate([node.routePath]) : this._router.navigate(['/error']);
   }
 
   toggleOpenedForGroupLink(groupLinkEl) {

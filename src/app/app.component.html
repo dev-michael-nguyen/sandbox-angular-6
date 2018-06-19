@@ -1,11 +1,14 @@
-<app-left-nav [width]="leftNavWidth" [isOpened]="isLeftNavOpened" [data]="leftNavData"></app-left-nav>
-<div class="app-main" id="app-main">
-  <input type="hidden" [value]="appMainState"/>
-  <div class="app-header" id="app-header">
-    <app-icon-bar>
-      <app-icon-bar-button icon="fa fa-bars" (click)="toggleLeftNav()"></app-icon-bar-button>
-    </app-icon-bar>
-    <app-icon-bar class="pos-fixed-top-right" [data]="iconBarData"></app-icon-bar>
+<main class="app">
+  <app-left-nav class="app-left-nav" [data]="leftNavData" [style.marginLeft]="showLeftNav ? '0' : '-24em'"></app-left-nav>
+  <div class="app-body">
+    <nav class="app-body-top-nav">
+      <app-icon-bar style="flex-grow: 10">
+        <app-icon-bar-button icon="fa fa-bars" (click)="toggleLeftNav()"></app-icon-bar-button>
+      </app-icon-bar>
+      <app-icon-bar [data]="iconBarData"></app-icon-bar>
+    </nav>
+    <div class="app-body-router-outlet">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-  <router-outlet></router-outlet>
-</div>
+</main>

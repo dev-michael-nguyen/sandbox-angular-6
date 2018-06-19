@@ -1,13 +1,23 @@
-#app-main {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: margin-left .2s;
+.app {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: hidden;
+}
+
+.app-left-nav {
+  flex: 0 0 24em;
+  transition: margin 0.3s ease;
+  border-right: 1px solid;
+  height: 100vh;
+  background-color: #bbbbbb;
+}
+
+.app-body {
   width: 100%;
 }
 
-.pos-fixed-top-right{
-  position: fixed;
-  top: 0;
-  right: 0;
+.app-body-top-nav {
+  display: flex;
+  flex-direction: row;
 }

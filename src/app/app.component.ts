@@ -7,57 +7,48 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  leftNavWidth = '320px';
-  isLeftNavOpened = true;
   leftNavData = [
     {
       title: 'My Dashboard',
       children: [
-        { icon: 'fa fa-home', title: 'Home', path: '/home' },
-        { icon: 'fa fa-calendar', title: 'Calendar', path: '/calendar' },
-        { icon: 'fa fa-comments', title: 'Messages', path: '/messages' },
-        { icon: 'fa fa-exclamation-triangle', title: 'Alerts', path: '/alerts' },
-        { icon: 'fa fa-search', title: 'Search', path: '/search' },
+        { icon: 'fa fa-home', title: 'Home', routePath: '/home' },
+        { icon: 'fa fa-calendar', title: 'Calendar', routePath: '/calendar' },
+        { icon: 'fa fa-comments', title: 'Messages', routePath: '/messages' },
+        { icon: 'fa fa-exclamation-triangle', title: 'Alerts', routePath: '/alerts' },
+        { icon: 'fa fa-search', title: 'Search', routePath: '/search' },
       ]
     },
     {
       title: 'Modules',
       children: [
-        { icon: 'fa fa-user', title: 'Profiles', path: '/profiles' },
-        { icon: 'fa fa-vcard', title: 'Assignments', path: '/assignments' },
-        { icon: 'fa fa-building', title: 'Organizations', path: '/organizations' },
-        { icon: 'fa fa-users', title: 'Staffs', path: '/staffs' },
+        { icon: 'fa fa-user', title: 'Profiles', routePath: '/profiles' },
+        { icon: 'fa fa-vcard', title: 'Assignments', routePath: '/assignments' },
+        { icon: 'fa fa-building', title: 'Organizations', routePath: '/organizations' },
+        { icon: 'fa fa-users', title: 'Staffs', routePath: '/staffs' },
       ]
     },
     {
       title: 'Tools',
       children: [
-        { icon: 'fa fa-book', title: 'Notes', path: '/notes' },
-        { icon: 'fa fa-list-alt', title: 'Reports', path: '/reports' },
-        { icon: 'fa fa-shield', title: 'Security', path: '/security' },
-        { icon: 'fa fa-question', title: 'Help', path: '/help' },
-        { icon: 'fa fa-cogs', title: 'Settings', path: '/settings' },
+        { icon: 'fa fa-book', title: 'Notes', routePath: '/notes' },
+        { icon: 'fa fa-list-alt', title: 'Reports', routePath: '/reports' },
+        { icon: 'fa fa-shield', title: 'Security', routePath: '/security' },
+        { icon: 'fa fa-question', title: 'Help', routePath: '/help' },
+        { icon: 'fa fa-cogs', title: 'Settings', routePath: '/settings' },
       ]
     },
   ];
 
   iconBarData = [
-    { icon: 'fa fa-home', title: 'Home', path: '/home' },
-    { icon: 'fa fa-calendar', title: 'Calendar', path: '/calendar' },
-    { icon: 'fa fa-comments', title: 'Messages', path: '/messages' },
-    { icon: 'fa fa-exclamation-triangle', title: 'Alerts', path: '/alerts' },
-    { icon: 'fa fa-search', title: 'Search', path: '/search' },
+    { icon: 'fa fa-home', title: 'Home', routePath: '/home' },
+    { icon: 'fa fa-calendar', title: 'Calendar', routePath: '/calendar' },
+    { icon: 'fa fa-comments', title: 'Messages', routePath: '/messages' },
+    { icon: 'fa fa-exclamation-triangle', title: 'Alerts', routePath: '/alerts' },
+    { icon: 'fa fa-search', title: 'Search', routePath: '/search' },
   ];
 
+  showLeftNav = true;
   toggleLeftNav() {
-    this.isLeftNavOpened = !this.isLeftNavOpened;
-  }
-
-  get appMainState() {
-    this.isLeftNavOpened
-      ? document.getElementById('app-main').style.marginLeft = this.leftNavWidth
-      : document.getElementById('app-main').style.marginLeft = '0';
-
-    return this.isLeftNavOpened;
+    this.showLeftNav = !this.showLeftNav;
   }
 }
