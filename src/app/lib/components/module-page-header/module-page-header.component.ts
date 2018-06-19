@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ModulePageHeaderComponent {
   @Input() title: string;
+  @Input() bgcError = false;
 }

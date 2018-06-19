@@ -8,3 +8,7 @@
 .module-page-header h2 {
   margin: 8px 0;
 }
+
+.module-page-header.bgc-error {
+  background-color: lightcoral;
+}
