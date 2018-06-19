@@ -7,6 +7,7 @@ import { HomeModule } from './modules/home/home.module';
 import { SystemModule } from './modules/system/system.module';
 
 import { AppComponent } from './app.component';
+import { PersonModule } from './modules/person/person.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     LibModule,
     HomeModule,
+    PersonModule,
     SystemModule
   ],
   declarations: [
