@@ -1,0 +1,10 @@
+.action-bar-button {
+  padding: 8px;
+  font-size: 32px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.action-bar-button-title {
+  padding-left: 8px;
+}

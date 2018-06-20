@@ -1,7 +1,6 @@
 .app {
   display: flex;
-  flex-direction: row;
-  flex: 1;
+  flex-flow: row;
   overflow: hidden;
 }
 
@@ -19,5 +18,5 @@
 
 .app-body-top-nav {
   display: flex;
-  flex-direction: row;
+  flex-flow: row;
 }

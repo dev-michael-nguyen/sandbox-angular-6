@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ActionBarComponent } from './components/action-bar/action-bar.component';
+import { ActionBarButtonComponent } from './components/action-bar-button/action-bar-button.component';
 import { IconBarComponent } from './components/icon-bar/icon-bar.component';
 import { IconBarButtonComponent } from './components/icon-bar-button/icon-bar-button.component';
 import { LeftNavComponent } from './components/left-nav/left-nav.component';
@@ -12,6 +14,8 @@ import { ModulePageHeaderComponent } from './components/module-page-header/modul
     CommonModule,
   ],
   declarations: [
+    ActionBarComponent,
+    ActionBarButtonComponent,
     IconBarComponent,
     IconBarButtonComponent,
     LeftNavComponent,
@@ -19,11 +23,13 @@ import { ModulePageHeaderComponent } from './components/module-page-header/modul
     ModulePageHeaderComponent,
   ],
   exports: [
+    ActionBarComponent,
+    ActionBarButtonComponent,
     IconBarComponent,
     IconBarButtonComponent,
     LeftNavComponent,
     LeftNavNodeComponent,
-    ModulePageHeaderComponent
+    ModulePageHeaderComponent,
   ]
 })
 

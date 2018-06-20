@@ -1,0 +1,8 @@
+.action-bar {
+  display: flex;
+  flex-flow: row;
+}
+
+.action-bar-center {
+  flex-grow: 10;
+}
