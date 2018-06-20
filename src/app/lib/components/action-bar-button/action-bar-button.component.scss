@@ -1,8 +1,14 @@
+@import '../../sass/colors';
+
 .action-bar-button {
   padding: 8px;
   font-size: 32px;
   cursor: pointer;
   text-align: center;
+}
+
+.action-bar-button:hover {
+  background-color: $color-primary-4;
 }
 
 .action-bar-button-title {
