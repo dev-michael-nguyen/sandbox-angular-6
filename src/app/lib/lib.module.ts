@@ -8,6 +8,8 @@ import { IconBarButtonComponent } from './components/icon-bar-button/icon-bar-bu
 import { LeftNavComponent } from './components/left-nav/left-nav.component';
 import { LeftNavNodeComponent } from './components/left-nav-node/left-nav-node.component';
 import { ModulePageHeaderComponent } from './components/module-page-header/module-page-header.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ActionBarTitleComponent } from './components/action-bar-title/action-bar-title.component';
 
 @NgModule({
   imports: [
@@ -16,20 +18,24 @@ import { ModulePageHeaderComponent } from './components/module-page-header/modul
   declarations: [
     ActionBarComponent,
     ActionBarButtonComponent,
+    ActionBarTitleComponent,
     IconBarComponent,
     IconBarButtonComponent,
     LeftNavComponent,
     LeftNavNodeComponent,
     ModulePageHeaderComponent,
+    ModalComponent,
   ],
   exports: [
     ActionBarComponent,
     ActionBarButtonComponent,
+    ActionBarTitleComponent,
     IconBarComponent,
     IconBarButtonComponent,
     LeftNavComponent,
     LeftNavNodeComponent,
     ModulePageHeaderComponent,
+    ModalComponent,
   ]
 })
 

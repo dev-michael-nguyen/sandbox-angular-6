@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from '../../../../lib/components/modal/modal.service';
 
 @Component({
   selector: 'app-person-page',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _modalService: ModalService
+  ) { }
 
   ngOnInit() {
   }
 
+  ADD_PERSON_MODAL_ID = 'app-add-person-modal';
+  openAddPersonModal() {
+    this._modalService.open(this.ADD_PERSON_MODAL_ID);
+  }
+
+  SETTING_MODAL_ID = 'app-setting-modal';
+  openSettingModal() {
+    this._modalService.open(this.SETTING_MODAL_ID);
+  }
 }

@@ -1,0 +1,20 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-content-header">
+      <app-action-bar>
+        <div content-left>
+          <app-action-bar-title [icon]="titleIcon" [title]="title"></app-action-bar-title>
+        </div>
+        <div content-right>
+          <app-action-bar-button icon="fa fa-times" (click)="close()"></app-action-bar-button>
+        </div>
+      </app-action-bar>
+    </div>
+    <div class="modal-content-body">
+      <ng-content select="[content-body]"></ng-content>
+    </div>
+    <div class="modal-content-footer">
+      <ng-content select="[content-footer]"></ng-content>
+    </div>
+  </div>
+</div>

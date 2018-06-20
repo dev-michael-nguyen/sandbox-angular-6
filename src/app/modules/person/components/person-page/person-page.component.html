@@ -2,10 +2,26 @@
   <app-module-page-header title="Persons"></app-module-page-header>
   <app-action-bar>
     <div content-left>
-      <app-action-bar-button icon="fa fa-plus" title="Add Person"></app-action-bar-button>
+      <app-action-bar-button icon="fa fa-plus" title="Add Person" (click)="openAddPersonModal()"></app-action-bar-button>
     </div>
     <div content-right>
-      <app-action-bar-button icon="fa fa-cog"></app-action-bar-button>
+      <app-action-bar-button icon="fa fa-cog" (click)="openSettingModal()"></app-action-bar-button>
     </div>
   </app-action-bar>
+  <app-modal [id]="ADD_PERSON_MODAL_ID" titleIcon="fa fa-user" title="Add Person">
+    <div content-body>
+      TBI: ADD PERSON MODAL BODY
+    </div>
+    <div content-footer>
+      TBI: ADD PERSON MODAL FOOTER
+    </div>
+  </app-modal>
+  <app-modal [id]="SETTING_MODAL_ID" titleIcon="fa fa-cog" title="SETTING">
+    <div content-body>
+      TBI: SETTING MODAL BODY
+    </div>
+    <div content-footer>
+      TBI: SETTING MODAL FOOTER
+    </div>
+  </app-modal>
 </div>

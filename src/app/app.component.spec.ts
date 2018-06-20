@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppRoutingModule } from './app-routing.module';
 import { LibModule } from './lib/lib.module';
+import { PersonModule } from './modules/person/person.module';
 import { HomeModule } from './modules/home/home.module';
 import { SystemModule } from './modules/system/system.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ describe('AppComponent', () => {
         RouterTestingModule,
         AppRoutingModule,
         LibModule,
+        PersonModule,
         HomeModule,
         SystemModule
       ],
