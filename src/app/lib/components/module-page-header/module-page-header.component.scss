@@ -1,7 +1,9 @@
+@import '../../sass/colors';
+
 .module-page-header {
   border-width: 1px 0;
   border-style: solid;
-  background-color: #bbbbbb;
+  background-color: $color-primary;
   text-align: center;
 }
 
@@ -10,5 +12,5 @@
 }
 
 .module-page-header.bgc-error {
-  background-color: lightcoral;
+  background-color: $color-error;
 }

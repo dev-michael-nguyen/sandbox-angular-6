@@ -1,3 +1,5 @@
+@import '../../sass/colors';
+
 .icon-bar-button {
   width: 96px;
   padding: 12px 0;
@@ -5,9 +7,12 @@
   cursor: pointer;
 }
 
-.icon-bar-button:hover,
+.icon-bar-button:hover {
+  background-color: $color-primary-4;
+}
+
 .icon-bar-button.active {
-  background-color: #bbbbbb;
+  background-color: $color-primary;
 }
 
 .icon-bar-button i {
