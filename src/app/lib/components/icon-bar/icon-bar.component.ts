@@ -4,7 +4,7 @@ import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-icon-bar',
   templateUrl: './icon-bar.component.html',
-  styleUrls: ['./icon-bar.component.css']
+  styleUrls: ['./icon-bar.component.scss']
 })
 export class IconBarComponent implements OnInit {
   _ACTIVE = 'active';

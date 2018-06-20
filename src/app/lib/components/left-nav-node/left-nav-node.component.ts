@@ -4,7 +4,7 @@ import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-left-nav-node',
   templateUrl: './left-nav-node.component.html',
-  styleUrls: ['./left-nav-node.component.css']
+  styleUrls: ['./left-nav-node.component.scss']
 })
 
 export class LeftNavNodeComponent implements OnInit {
