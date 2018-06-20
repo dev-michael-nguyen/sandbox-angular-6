@@ -7,16 +7,19 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  myFavorites = [
+    { icon: 'fa fa-home', title: 'Home', routePath: '/home-page' },
+    { icon: 'fa fa-calendar', title: 'Calendar', routePath: '/calendar-page' },
+    { icon: 'fa fa-comments', title: 'Messages', routePath: '/messages-page' },
+    { icon: 'fa fa-exclamation-triangle', title: 'Alerts', routePath: '/alerts-page' },
+    { icon: 'fa fa-user', title: 'Persons', routePath: '/persons-page' },
+    { icon: 'fa fa-search', title: 'Search', routePath: '/search-page' },
+  ];
+
   leftNavData = [
     {
-      title: 'My Dashboard',
-      children: [
-        { icon: 'fa fa-home', title: 'Home', routePath: '/home-page' },
-        { icon: 'fa fa-calendar', title: 'Calendar', routePath: '/calendar-page' },
-        { icon: 'fa fa-comments', title: 'Messages', routePath: '/messages-page' },
-        { icon: 'fa fa-exclamation-triangle', title: 'Alerts', routePath: '/alerts-page' },
-        { icon: 'fa fa-search', title: 'Search', routePath: '/search-page' },
-      ]
+      title: 'My Favorites',
+      children: this.myFavorites
     },
     {
       title: 'Modules',
@@ -39,14 +42,7 @@ export class AppComponent {
     },
   ];
 
-  iconBarData = [
-    { icon: 'fa fa-home', title: 'Home', routePath: '/home-page' },
-    { icon: 'fa fa-calendar', title: 'Calendar', routePath: '/calendar-page' },
-    { icon: 'fa fa-comments', title: 'Messages', routePath: '/messages-page' },
-    { icon: 'fa fa-exclamation-triangle', title: 'Alerts', routePath: '/alerts-page' },
-    { icon: 'fa fa-user', title: 'Persons', routePath: '/persons-page' },
-    { icon: 'fa fa-search', title: 'Search', routePath: '/search-page' },
-  ];
+  iconBarData = this.myFavorites;
 
   showLeftNav = true;
   toggleLeftNav() {
