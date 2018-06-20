@@ -5,7 +5,7 @@ import { ErrorPageComponent } from './modules/system/components/error-page/error
 import { PersonPageComponent } from './modules/person/components/person-page/person-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home-page', pathMatch: 'full' },
   { path: 'home-page', component: HomePageComponent },
   { path: 'persons-page', component: PersonPageComponent },
   { path: 'error-page', component: ErrorPageComponent },
