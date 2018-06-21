@@ -11,14 +11,17 @@ export class ModalService {
     return this.modals.length;
   }
 
-  add(modal: any) {
+  register(modal: any) {
+    if (this._find(modal.id)) { return false; }
     this.modals.push(modal);
+    return true;
   }
 
-  remove(id: string) {
+  unregister(id: string) {
     const index = this.modals.findIndex((m) => m.id === id);
     if (index === -1) { return false; }
     this.modals.splice(index, 1);
+    return true;
   }
 
   open(id: string) {

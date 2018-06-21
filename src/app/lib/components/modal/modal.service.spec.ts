@@ -2,15 +2,23 @@ import { TestBed, inject, ComponentFixture, async } from '@angular/core/testing'
 
 import { ModalService } from './modal.service';
 import { ModalComponent } from './modal.component';
+import { ActionBarComponent } from '../action-bar/action-bar.component';
+import { ActionBarButtonComponent } from '../action-bar-button/action-bar-button.component';
+import { ActionBarTitleComponent } from '../action-bar-title/action-bar-title.component';
 
-describe('ModalComponent', () => {
+describe('ModalService', () => {
   const ID = '1';
   let component: ModalComponent;
   let fixture: ComponentFixture<ModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalComponent ],
+      declarations: [
+        ModalComponent,
+        ActionBarComponent,
+        ActionBarButtonComponent,
+        ActionBarTitleComponent,
+      ],
       providers: [ModalService]
     })
     .compileComponents();
@@ -40,7 +48,7 @@ describe('ModalComponent', () => {
   }));
 
   it('should remove', inject([ModalService], (service: ModalService) => {
-    service.remove(ID);
+    service.unregister(ID);
     expect(service.count).toEqual(0);
   }));
 });
