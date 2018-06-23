@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-icon-bar-button',
+  selector: 'mi-platform-icon-bar-button',
   templateUrl: './icon-bar-button.component.html',
   styleUrls: ['./icon-bar-button.component.scss']
 })

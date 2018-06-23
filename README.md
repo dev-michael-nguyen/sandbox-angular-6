@@ -2,6 +2,48 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
+## Project Structure
+```bash
+root
+|
+|-src
+| |
+| |-app
+|   | # app index page
+|   |-index.html
+|   | # bootstrap app module
+|   |-main.ts
+|   | # import projects/modules and bootstrap app component
+|   |-app.module.ts
+|
+|-projects
+ |
+ |-mi-platform
+   |
+   |-src
+     | # export api for mi-platform
+     |-public_api.ts
+     |
+     |-lib
+       | # index for lib module
+       |-lib.module.ts
+       |
+       |-components
+       |
+       |-services
+       |
+       |-sass
+       |
+       |-modules
+         |
+         |-navigation
+         |
+         |-layout
+         |
+         |-...
+```
+
+
 ## App CLI
 
 ```bash

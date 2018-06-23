@@ -8,7 +8,11 @@
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -115,6 +119,51 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "mi-platform": {
+      "root": "projects/mi-platform",
+      "sourceRoot": "projects/mi-platform/src",
+      "projectType": "library",
+      "prefix": "mi-platform",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mi-platform/tsconfig.mi-platform.json",
+            "project": "projects/mi-platform/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/mi-platform/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mi-platform/src/test.ts",
+            "tsConfig": "projects/mi-platform/tsconfig.spec.json",
+            "karmaConfig": "projects/mi-platform/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mi-platform/tsconfig.mi-platform.json",
+              "projects/mi-platform/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-action-bar-title',
+  selector: 'mi-platform-action-bar-title',
   templateUrl: './action-bar-title.component.html',
   styleUrls: ['./action-bar-title.component.scss']
 })

@@ -1,11 +1,11 @@
 <main class="app">
-  <app-left-nav class="app-left-nav" [data]="leftNavData" [style.marginLeft]="showLeftNav ? '0' : '-24em'"></app-left-nav>
+  <mi-platform-left-nav class="app-left-nav" [data]="leftNavData" [style.marginLeft]="showLeftNav ? '0' : '-24em'"></mi-platform-left-nav>
   <div class="app-body">
     <nav class="app-body-top-nav">
-      <app-icon-bar style="flex-grow: 10">
-        <app-icon-bar-button icon="fa fa-bars" (click)="toggleLeftNav()"></app-icon-bar-button>
-      </app-icon-bar>
-      <app-icon-bar [data]="iconBarData"></app-icon-bar>
+      <mi-platform-icon-bar style="flex-grow: 10">
+        <mi-platform-icon-bar-button icon="fa fa-bars" (click)="toggleLeftNav()"></mi-platform-icon-bar-button>
+      </mi-platform-icon-bar>
+      <mi-platform-icon-bar [data]="iconBarData"></mi-platform-icon-bar>
     </nav>
     <div class="app-body-router-outlet">
       <router-outlet></router-outlet>

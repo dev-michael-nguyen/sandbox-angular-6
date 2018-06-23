@@ -2,7 +2,7 @@ import { Component, Input, ElementRef, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-  selector: 'app-icon-bar',
+  selector: 'mi-platform-icon-bar',
   templateUrl: './icon-bar.component.html',
   styleUrls: ['./icon-bar.component.scss']
 })

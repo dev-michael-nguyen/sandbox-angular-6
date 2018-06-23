@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-action-bar',
+  selector: 'mi-platform-action-bar',
   templateUrl: './action-bar.component.html',
   styleUrls: ['./action-bar.component.scss']
 })

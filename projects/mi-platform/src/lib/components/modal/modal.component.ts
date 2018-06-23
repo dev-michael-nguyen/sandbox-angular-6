@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ElementRef, OnDestroy } from '@angular/core';
 import { ModalService } from './modal.service';
 
 @Component({
-  selector: 'app-modal',
+  selector: 'mi-platform-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })

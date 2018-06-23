@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { ActionBarComponent } from './components/action-bar/action-bar.component';
 import { ActionBarButtonComponent } from './components/action-bar-button/action-bar-button.component';
+import { ActionBarTitleComponent } from './components/action-bar-title/action-bar-title.component';
 import { IconBarComponent } from './components/icon-bar/icon-bar.component';
 import { IconBarButtonComponent } from './components/icon-bar-button/icon-bar-button.component';
 import { LeftNavComponent } from './components/left-nav/left-nav.component';
 import { LeftNavNodeComponent } from './components/left-nav-node/left-nav-node.component';
-import { ModulePageHeaderComponent } from './components/module-page-header/module-page-header.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { ActionBarTitleComponent } from './components/action-bar-title/action-bar-title.component';
+import { ModulePageHeaderComponent } from './components/module-page-header/module-page-header.component';
+
+import { ModalService } from './components/modal/modal.service';
 
 @NgModule({
   imports: [
@@ -23,8 +25,8 @@ import { ActionBarTitleComponent } from './components/action-bar-title/action-ba
     IconBarButtonComponent,
     LeftNavComponent,
     LeftNavNodeComponent,
-    ModulePageHeaderComponent,
     ModalComponent,
+    ModulePageHeaderComponent,
   ],
   exports: [
     ActionBarComponent,
@@ -34,9 +36,9 @@ import { ActionBarTitleComponent } from './components/action-bar-title/action-ba
     IconBarButtonComponent,
     LeftNavComponent,
     LeftNavNodeComponent,
-    ModulePageHeaderComponent,
     ModalComponent,
-  ]
+    ModulePageHeaderComponent,
+  ],
+  providers: [ModalService]
 })
-
-export class LibModule { }
+export class MiPlatformModule { }

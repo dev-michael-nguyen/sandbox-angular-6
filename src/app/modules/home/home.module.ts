@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MiPlatformModule } from 'mi-platform';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { LibModule } from '../../lib/lib.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    LibModule
+    MiPlatformModule
   ],
   declarations: [
     HomePageComponent

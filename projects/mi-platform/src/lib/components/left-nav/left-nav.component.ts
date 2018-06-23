@@ -1,7 +1,7 @@
 import { Component, Input, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'app-left-nav',
+  selector: 'mi-platform-left-nav',
   templateUrl: './left-nav.component.html',
   styleUrls: ['./left-nav.component.scss']
 })

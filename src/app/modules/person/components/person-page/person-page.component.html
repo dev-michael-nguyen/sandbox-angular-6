@@ -1,27 +1,27 @@
 <div class="person-page">
-  <app-module-page-header title="Persons"></app-module-page-header>
-  <app-action-bar>
+  <mi-platform-module-page-header title="Persons"></mi-platform-module-page-header>
+  <mi-platform-action-bar>
     <div content-left>
-      <app-action-bar-button icon="fa fa-plus" title="Add Person" (click)="openAddPersonModal()"></app-action-bar-button>
+      <mi-platform-action-bar-button icon="fa fa-plus" title="Add Person" (click)="openAddPersonModal()"></mi-platform-action-bar-button>
     </div>
     <div content-right>
-      <app-action-bar-button icon="fa fa-cog" (click)="openSettingModal()"></app-action-bar-button>
+      <mi-platform-action-bar-button icon="fa fa-cog" (click)="openSettingModal()"></mi-platform-action-bar-button>
     </div>
-  </app-action-bar>
-  <app-modal [id]="ADD_PERSON_MODAL_ID" titleIcon="fa fa-user" title="Add Person">
+  </mi-platform-action-bar>
+  <mi-platform-modal [id]="ADD_PERSON_MODAL_ID" titleIcon="fa fa-user" title="Add Person">
     <div content-body>
       TBI: ADD PERSON MODAL BODY
     </div>
     <div content-footer>
       TBI: ADD PERSON MODAL FOOTER
     </div>
-  </app-modal>
-  <app-modal [id]="SETTING_MODAL_ID" titleIcon="fa fa-cog" title="SETTING">
+  </mi-platform-modal>
+  <mi-platform-modal [id]="SETTING_MODAL_ID" titleIcon="fa fa-cog" title="SETTING">
     <div content-body>
       TBI: SETTING MODAL BODY
     </div>
     <div content-footer>
       TBI: SETTING MODAL FOOTER
     </div>
-  </app-modal>
+  </mi-platform-modal>
 </div>

@@ -1,6 +1,6 @@
 <div class="left-nav-node">
   <a class="left-nav-link" href="javascript:void(0)" *ngIf="!node.children" (click)="toggleActiveForLink($event.target, node)">
-    <input class="left-nav-link-path" type="hidden" [value]="node.routePath">
+    <input class="left-nav-link-path" type="hidden" *ngIf="node.routePath" [value]="node.routePath">
     <span class="left-nav-link-title">
       <i class="{{node.icon + ' fa-fw'}}"></i>
       {{ node.title }}
@@ -15,7 +15,7 @@
     </a>
     <div class="left-nav-group-links">
       <ng-container *ngFor="let childNode of node.children">
-        <app-left-nav-node [node]="childNode"></app-left-nav-node>
+        <mi-platform-left-nav-node [node]="childNode"></mi-platform-left-nav-node>
       </ng-container>
     </div>
   </div>

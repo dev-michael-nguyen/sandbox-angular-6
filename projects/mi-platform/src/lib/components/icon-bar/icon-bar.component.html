@@ -1,9 +1,9 @@
 <div class="icon-bar">
   <ng-container *ngFor="let button of data">
-    <app-icon-bar-button
+    <mi-platform-icon-bar-button
       [icon]="button.icon" [title]="button.title" [routePath]="button.routePath"
       (click)="toggleButton($event.target, button)">
-    </app-icon-bar-button>
+    </mi-platform-icon-bar-button>
   </ng-container>
   <ng-content></ng-content>
 </div>

@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-  selector: 'app-left-nav-node',
+  selector: 'mi-platform-left-nav-node',
   templateUrl: './left-nav-node.component.html',
   styleUrls: ['./left-nav-node.component.scss']
 })
@@ -11,7 +11,12 @@ export class LeftNavNodeComponent implements OnInit {
   _ACTIVE = 'active';
   _OPENED = 'opened';
 
-  @Input() node: { children: Array<object> };
+  @Input() node: {
+    icon: string,
+    title: string,
+    routePath: string,
+    children: Array<object>
+  };
 
   get rootEl() {
     return this._el.nativeElement.firstElementChild as HTMLElement;
