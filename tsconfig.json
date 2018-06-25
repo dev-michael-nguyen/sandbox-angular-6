@@ -17,7 +17,7 @@
       "dom"
     ],
     "paths": {
-      "mi-platform": [
+      "@mi-platform": [
         "projects/mi-platform/src/public_api"
       ]
     }

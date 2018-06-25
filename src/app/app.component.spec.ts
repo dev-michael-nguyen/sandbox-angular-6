@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MiPlatformModule } from 'mi-platform';
+import { MiPlatformModule } from '@mi-platform';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonModule } from './modules/person/person.module';
 import { HomeModule } from './modules/home/home.module';

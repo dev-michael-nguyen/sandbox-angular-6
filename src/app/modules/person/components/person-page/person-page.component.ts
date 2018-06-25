@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalService } from 'mi-platform';
+import { ModalService } from '@mi-platform';
 
 @Component({
   selector: 'app-person-page',

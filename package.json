@@ -11,7 +11,7 @@
     "app:build": "ng lint && ng build",
     "app:build:prod": "ng lint && ng build --prod",
     "app:deploy": "firebase deploy --only hosting",
-    "lib:pack": "ng build mi-platform"
+    "pack:platform": "ng build mi-platform"
   },
   "private": true,
   "dependencies": {
